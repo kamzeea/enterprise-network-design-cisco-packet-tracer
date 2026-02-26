@@ -1,199 +1,179 @@
-Enterprise Network Design & Implementation (Cisco Packet Tracer)
+# Enterprise Network Design & Implementation (Cisco Packet Tracer)
 
-Project Overview
+## Project Overview
 
-This project demonstrates the design and implementation of a secure enterprise network infrastructure for a simulated organization (ABC Corporation). The objective was to modernize an outdated network by improving connectivity, scalability, and security across multiple departments.
+This project showcases the design and implementation of a **secure enterprise network infrastructure** for a simulated organization, **ABC Corporation**. It focuses on modernizing an outdated network to improve **connectivity**, **scalability**, and **security** across multiple departments.
 
-The network was designed and tested using Cisco Packet Tracer, incorporating real-world networking concepts such as subnetting, routing, secure remote access, and network verification.
+The network was built and tested in **Cisco Packet Tracer**, applying real-world concepts such as **subnetting**, **routing**, **secure remote access**, and **network verification**.
 
-Full technical documentation: CT210_Case Study Documentation
+Full technical documentation: **CT210_Case Study Documentation**
 
-*Project Objectives*
+---
 
-Design a scalable enterprise network architecture
+## Project Objectives
 
-Implement efficient IP addressing using VLSM
+- Design a **scalable** enterprise network architecture  
+- Implement efficient IP addressing using **VLSM**  
+- Configure **secure remote access (SSH)**  
+- Enable reliable **inter-department communication**  
+- Improve **network security** and management  
+- Validate end-to-end connectivity through **testing**
 
-Configure secure remote access (SSH)
+---
 
-Enable inter-department communication
+## Business Scenario
 
-Improve network security and management
+**ABC Corporation** required a network upgrade to:
 
-Validate connectivity through testing
+- Support a new department and future growth  
+- Improve operational efficiency and uptime  
+- Strengthen security controls for administrative access  
+- Ensure reliable communication between departments  
 
-*Business Scenario*
+The solution delivers a **future-ready, modular infrastructure** capable of expansion with minimal redesign.
 
-ABC Corporation required a network upgrade to:
+---
 
-Support a new department
+## Skills Demonstrated
 
-Improve operational efficiency
+**Networking & Design**
 
-Strengthen security controls
+- Enterprise **network topology** design  
+- **Router** and **switch** configuration  
+- **VLAN** planning and management  
+- **Routing** configuration and verification  
+- **ARP** and **MAC table** analysis  
 
-Ensure reliable communication between departments
+**Security**
 
-The solution provides a future-ready infrastructure capable of expansion.
+- **SSH**-based secure remote access  
+- **Password encryption** and authentication  
+- **Banner MOTD** for unauthorized access warnings  
+- Basic **access control** configuration  
 
+**Infrastructure Design**
 
+- **Variable Length Subnet Masking (VLSM)**  
+- **IP address planning** and subnet allocation  
+- **Network segmentation** by department  
+- **Fault-tolerant** topology design  
 
-*Skills Demonstrated*
+**Tools & Troubleshooting**
 
-Networking
+- **Cisco Packet Tracer**  
+- **Cisco IOS CLI** configuration  
+- Network **troubleshooting** and diagnostics  
 
-Network topology design
+---
 
-Router & switch configuration
-
-VLAN management
-
-Routing configuration
-
-ARP & MAC table analysis
-
-Security
-
-SSH secure remote access
-
-Password encryption
-
-Banner MOTD implementation
-
-Access control configuration
-
-Infrastructure Design
-
-Variable Length Subnet Masking (VLSM)
-
-IP address planning
-
-Network segmentation
-
-Fault-tolerant topology
-
-Tools
-
-Cisco Packet Tracer
-
-CLI configuration (Cisco IOS)
-
-Network troubleshooting
-
-
-*Network Architecture*
+## Network Architecture
 
 The enterprise network connects three departments:
 
-Accounting (Subnet A)
+- **Accounting (Subnet A)**  
+- **Business Services (Subnet B)**  
+- **Customer Services (Subnet C)**  
 
-Business Services (Subnet B)
+A central router, **NetProEdge**, provides:
 
-Customer Services (Subnet C)
-
-A central router (NetProEdge) enables communication between subnets and external connectivity.
+- Inter-subnet routing between departments  
+- Connectivity to an upstream **ISP** for external access  
 
 The topology diagram (Appendix A, page 8) illustrates:
 
-Layered switch structure
+- A layered **switch** structure  
+- Department-based **segmentation**  
+- **Router-based** interconnection
 
-Department segmentation
+---
 
-Router-based interconnection
+## IP Address Design
 
-*IP Address Design*
+**VLSM** was used to efficiently allocate IP ranges based on department size:
 
-VLSM was used to efficiently allocate IP ranges based on department size:
+| Subnet   | Department        | Hosts |
+|---------|-------------------|-------|
+| Subnet A | Accounting        | 500   |
+| Subnet B | Business Services | 100   |
+| Subnet C | Customer Services | 30    |
 
-Subnet	Department	Hosts
-Subnet A	Accounting	500
-Subnet B	Business Services	100
-Subnet C	Customer Services	30
+Example address plan:
 
-(See IP Design table — page 8–9.)
+- **Subnet A:** `172.17.168.0/23`  
+- **Subnet B:** `172.17.170.0/25`  
+- **Subnet C:** `172.17.170.128/27`  
 
-Example:
+(Full IP design: IP Design table — pages 8–9.)
 
-Subnet A: 172.17.168.0/23
+---
 
-Subnet B: 172.17.170.0/25
-
-Subnet C: 172.17.170.128/27
-
-
-*Security Implementation*
+## Security Implementation
 
 Security configurations included:
 
-Encrypted passwords
+- **Encrypted passwords** on network devices  
+- **SSH Version 2** for secure remote management  
+- **Console** and **VTY** authentication  
+- **Automatic session timeouts**  
+- **Unauthorized access warning banner (MOTD)**  
 
-SSH Version 2 remote management
+These measures ensure secure administrative access across all network devices (see Security section — page 5).
 
-Console & VTY authentication
+---
 
-Automatic session timeouts
+## Network Services Configured
 
-Unauthorized access warning banner
+- Device **hostnames**  
+- **IP addressing** on interfaces  
+- **Default gateways** for end devices  
+- **SSH connectivity** for management  
+- **Routing tables** configuration  
+- **MAC address** learning  
+- **ARP** resolution  
 
-These measures ensure secure administrative access across all network devices.
+---
 
-(Documented in Security section — page 5.)
-
-*Network Services Configured*
-
-Device hostnames
-
-IP addressing
-
-Default gateways
-
-SSH connectivity
-
-Routing tables
-
-MAC address learning
-
-ARP resolution
-
-✅ Connectivity Testing
+## Connectivity Testing ✅
 
 Network functionality was verified using:
 
-Ping tests between subnets
-
-Switch communication validation
-
-Gateway reachability tests
-
-ISP simulation connectivity
+- **Ping tests** between subnets  
+- **Switch communication** validation  
+- **Gateway reachability** tests  
+- **ISP simulation** connectivity  
 
 Successful packet transmission confirmed full network operability (Appendix F, pages 38–40).
 
+---
 
-*Technical Validation*
+## Technical Validation
 
-Verification included:
+Verification steps included:
 
-MAC Address Tables
+- Reviewing **MAC address tables**  
+- Checking **ARP tables**  
+- Validating **routing tables**  
+- Checking **interface status**  
 
-ARP Tables
+The router’s **routing table** confirms inter-network communication paths (Appendix I, page 42).
 
-Routing Tables
+---
 
-Interface Status Checks
+## Technologies Used
 
-Router routing table confirms inter-network communication paths (Appendix I, page 42).
+- **Cisco Packet Tracer**  
+- **Cisco IOS CLI**  
+- **IPv4 networking**  
+- **VLSM subnetting**  
+- **SSH protocol**  
+- **Enterprise network design principles**
 
-*Technologies Used*
+---
 
-Cisco Packet Tracer
+## Key Outcomes
 
-Cisco IOS CLI
-
-IPv4 Networking
-
-VLSM Subnetting
-
-SSH Protocol
-
-Enterprise Network Design Principles
+- Secure **multi-department** network  
+- Efficient IP utilization via **VLSM**  
+- Successful **inter-subnet routing**  
+- **Encrypted** remote administration  
+- Verified **end-to-end connectivity**
